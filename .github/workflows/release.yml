@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # 登录蓝奏云后在控制台运行document.cookie
-      ylogin: ${{ secrets.LANZOU_ID }}
-      phpdisk_info: ${{ secrets.LANZOU_PSD }}
+      # ylogin: ${{ secrets.LANZOU_ID }}
+      # phpdisk_info: ${{ secrets.LANZOU_PSD }}
       # 蓝奏云里的文件夹ID（阅读3测试版:2670621）
-      LANZOU_FOLDER_ID: 'b0f7pt4ja'
+      # LANZOU_FOLDER_ID: 'b0f7pt4ja'
       # 是否上传到artifact
       UPLOAD_ARTIFACT: 'true'
     steps:
