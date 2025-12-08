@@ -28,13 +28,14 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           javaversion: 11
-          java-package: jdk
-          check-latest: false
-          server-id: github
-          server-username: GITHUB_ACTOR
-          server-password: GITHUB_TOKEN
-          overwrite-settings: true
-          job-status: success
+          java-package: 'jdk'
+          distribution: 'temurin'
+          # check-latest: false
+          # server-id: github
+          # server-username: GITHUB_ACTOR
+          # server-password: GITHUB_TOKEN
+          # overwrite-settings: true
+          # job-status: success
           # token: ***
         env:
           UPLOAD_ARTIFACT: false
