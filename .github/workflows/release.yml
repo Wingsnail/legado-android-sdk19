@@ -61,8 +61,8 @@ jobs:
           VERSION=$(date -d "8 hour" -u +3.%y.%m%d%H)
           echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
           sed "/def version/c def version = \"$VERSION\"" $GITHUB_WORKSPACE/app/build.gradle  -i
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
+      #- name: Setup Gradle
+      #  uses: gradle/actions/setup-gradle@v5
       - name: Build With Gradle
         run: |
           echo "开始进行release构建"
