@@ -22,7 +22,7 @@ jobs:
       # 是否上传到artifact
       UPLOAD_ARTIFACT: 'true'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-java@v3
@@ -39,7 +39,7 @@ jobs:
           # token: ***
         env:
           UPLOAD_ARTIFACT: false
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
@@ -61,6 +61,8 @@ jobs:
           VERSION=$(date -d "8 hour" -u +3.%y.%m%d%H)
           echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV
           sed "/def version/c def version = \"$VERSION\"" $GITHUB_WORKSPACE/app/build.gradle  -i
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
       - name: Build With Gradle
         run: |
           echo "开始进行release构建"
@@ -72,7 +74,7 @@ jobs:
           cp -rf ${{ github.workspace }}/app/build/outputs/apk/*/*/*.apk ${{ github.workspace }}/apk/
       - name: Upload App To Artifact
         if: ${{ env.UPLOAD_ARTIFACT != 'false' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: legado apk
           path: ${{ github.workspace }}/apk/*.apk
