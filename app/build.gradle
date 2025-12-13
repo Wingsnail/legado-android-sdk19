@@ -14,8 +14,8 @@ def version = "3." + releaseTime()
 def gitCommits = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion '30.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     kotlinOptions {
         jvmTarget = "11"
     }
