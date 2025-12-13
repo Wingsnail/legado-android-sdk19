@@ -50,11 +50,9 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
         with:
-          android-sdk-root: /usr/local/android-sdk
-          android-sdk-components: |
-            build-tools;28.0.3
-            platform-tools
-            cmdline-tools-latest
+          android.sdkRoot: /usr/local/android-sdk  # 指定 SDK 安装路径
+          android.components: 'build-tools;28.0.3,platform-tools,cmdline-tools-latest'  # 组件列表用分号分隔
+          android.license: true  # 自动接受许可协议
       - name: Release Apk Sign
         run: |
           echo "给apk增加签名"
