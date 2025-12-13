@@ -17,16 +17,6 @@ buildscript {
     }
 }
 
-android {
-    compileSdkVersion 30  // 需 ≥30 以支持 AGP 7.0.2
-    buildToolsVersion "30.0.3"  // 最低要求 30.0.2
-
-    defaultConfig {
-        targetSdkVersion 19  // 保持 Android 4.4 兼容
-        minSdkVersion 19
-    }
-}
-
 allprojects {
     configurations.all {
         resolutionStrategy {
