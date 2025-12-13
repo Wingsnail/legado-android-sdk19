@@ -47,6 +47,11 @@ jobs:
           key: ${{ runner.os }}-legado-${{ hashFiles('**/updateLog.md') }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-legado-${{ hashFiles('**/updateLog.md') }}-
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          android-sdk-root: /usr/local/android-sdk
+          android-sdk-components: 'build-tools;29.0.3,platform-tools,cmdline-tools-latest'
       - name: Release Apk Sign
         run: |
           echo "给apk增加签名"
@@ -63,8 +68,8 @@ jobs:
           sed "/def version/c def version = \"$VERSION\"" $GITHUB_WORKSPACE/app/build.gradle  -i
       #- name: Setup Gradle
       #  uses: gradle/actions/setup-gradle@v5
-      - name: Clean build cache
-        run: ./gradlew clean
+      #- name: Clean build cache
+      #  run: ./gradlew clean
       - name: Build With Gradle
         run: |
           echo "开始进行release构建"
