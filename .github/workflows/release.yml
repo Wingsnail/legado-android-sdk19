@@ -48,11 +48,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-legado-${{ hashFiles('**/updateLog.md') }}-
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v2
+        uses: android-actions/setup-android@v3
         with:
-          android.sdkRoot: /usr/local/android-sdk  # 指定 SDK 安装路径
-          android.components: 'build-tools;28.0.3,platform-tools,cmdline-tools-latest'  # 组件列表用分号分隔
-          android.license: true  # 自动接受许可协议
+          cmdline-tools-version: '12266719'
+          accept-android-sdk-licenses: 'true'
+          packages: 'build-tools;28.0.3,platform-tools'
       - name: Release Apk Sign
         run: |
           echo "给apk增加签名"
