@@ -52,7 +52,8 @@ jobs:
         with:
           cmdline-tools-version: '8092744'
           accept-android-sdk-licenses: 'true'
-          packages: 'build-tools;28.0.3,platform-tools'
+          log-accepted-android-sdk-licenses: 'false'
+          # packages: 'build-tools;28.0.3,platform-tools'
       - name: Release Apk Sign
         run: |
           echo "给apk增加签名"
