@@ -47,13 +47,13 @@ jobs:
           key: ${{ runner.os }}-legado-${{ hashFiles('**/updateLog.md') }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-legado-${{ hashFiles('**/updateLog.md') }}-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          cmdline-tools-version: '8092744'
-          accept-android-sdk-licenses: 'true'
-          log-accepted-android-sdk-licenses: 'false'
-          packages: 'build-tools;28.0.3'
+      # - name: Set up Android SDK
+      #   uses: android-actions/setup-android@v3
+      #  with:
+      #    cmdline-tools-version: '8092744'
+      #    accept-android-sdk-licenses: 'true'
+      #    log-accepted-android-sdk-licenses: 'false'
+      #    packages: 'build-tools;28.0.3'
       - name: Release Apk Sign
         run: |
           echo "给apk增加签名"
