@@ -12,7 +12,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'de.timfreiheit.resourceplaceholders:placeholders:0.4'
+        // classpath 'de.timfreiheit.resourceplaceholders:placeholders:0.4'
         classpath 'de.undercouch:gradle-download-task:4.1.2'
     }
 }
@@ -20,8 +20,13 @@ buildscript {
 allprojects {
     configurations.all {
         resolutionStrategy {
+            // 强制 Kotlin 标准库版本为 1.5.31
             force "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
+            force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31"
             force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
+            force "org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31"
+            // 强制协程版本（若使用）
+            force "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2" // 与 Kotlin 1.5.31 匹配
         }
     }
     repositories {
