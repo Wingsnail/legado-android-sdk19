@@ -25,6 +25,7 @@ allprojects {
             force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31"
             force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
             force "org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31"
+            force "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
             // 强制协程版本（若使用）
             force "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2" // 与 Kotlin 1.5.31 匹配
         }
