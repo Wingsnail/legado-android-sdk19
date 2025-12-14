@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'de.timfreiheit.resourceplaceholders'
+//apply plugin: 'de.timfreiheit.resourceplaceholders'
 apply from: 'download.gradle'
 
 static def releaseTime() {
