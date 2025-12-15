@@ -10,7 +10,7 @@ buildscript {
         // maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath 'com.android.tools.build:gradle:7.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'de.timfreiheit.resourceplaceholders:placeholders:0.4'
         classpath 'de.undercouch:gradle-download-task:4.1.2'
@@ -28,7 +28,7 @@ allprojects {
             force "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
             // 强制协程版本（若使用）
             force "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2" // 与 Kotlin 1.5.31 匹配
-            force "com.android.tools.build:gradle:7.0.2"
+            force "com.android.tools.build:gradle:7.3.1"
         }
     }
     repositories {
